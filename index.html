@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Ibrahim | Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- ضيف السطر ده جوه الـ <head> تحت لينكات الـ CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --dark: #0f0f0f;
+            --card-bg: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+        body { background-color: var(--dark); color: var(--text); transition: 0.3s; line-height: 1.6; }
+
+        /* Header & Profile */
+        header { text-align: center; padding: 50px 20px; background: linear-gradient(to bottom, #1a1a1a, #0f0f0f); }
+        
+        .profile-img {
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%;
+    border: 5px solid var(--primary); 
+    margin-bottom: 20px;
+    object-fit: cover; 
+    object-position: center 35%; /* دي اللي هتظبط وشك في نص الدايرة بالظبط */
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.5);
+    background-color: #fff;
+}
+
+
+
+        
+        
+        #name {
+    font-family: 'Playfair Display', serif; /* الخط الجديد */
+    font-size: 2rem;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #ffffff, #00d2ff); /* تدريج لوني للاسم */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+}
+
+
+        /* Lang Toggle */
+        .lang-btn {
+    position: fixed; 
+    top: 20px; 
+    right: 20px;
+    padding: 10px 20px; 
+    background: #ffffff; /* ده اللون الأبيض اللي طلبته */
+    color: #000000;      /* الكتابة بالأسود عشان تبان */
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    z-index: 1000;
+    transition: 0.3s;    /* عشان الحركة تبقى ناعمة */
+}
+
+/* حركة بسيطة لما الماوس يقف عليه */
+.lang-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+
+        /* Projects Section */
+        .container { max-width: 1100px; margin: auto; padding: 50px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        .card {
+            background: var(--card-bg); border-radius: 15px; overflow: hidden;
+            transition: 0.3s; border: 1px solid #333;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card-content h3 { margin-bottom: 10px; color: var(--primary); }
+        .btn {
+            display: inline-block; padding: 10px 20px; background: var(--primary);
+            color: #000; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px;
+        }
+
+        /* Contact Section */
+        .contact { text-align: center; padding: 50px; background: #1a1a1a; margin-top: 50px; border-radius: 20px; }
+        .whatsapp { color: #25d366; font-size: 2rem; text-decoration: none; display: block; margin-top: 20px; }
+
+        /* Responsive */
+        @media (max-width: 600px) { h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+
+    <button class="lang-btn" onclick="toggleLang()">🌐</button>
+
+    <header id="header">
+        <img src="me.jpg" alt="Youssef Ibrahim" class="profile-img"> <!-- حط صورتك هنا باسم me.jpg -->
+        <h1 id="name">Youssef Ibrahim Khaled</h1>
+        <p class="job-title" id="title">مطور مواقع وريادي أعمال رقمي</p>
+        <p id="bio">بحول فكرتك لواقع بمواقع احترافية وتصميمات تخطف العين.</p>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px;" id="projects-head">نماذج من أعمالي 🚀</h2>
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <img src="pizza.jpg" alt="Pizza Site">
+                <div class="card-content">
+                    <h3 class="p-title">موقع مطعم (Pizzeria Roma)</h3>
+                    <p class="p-desc">منيو تفاعلي وتصميم سريع للمطاعم.</p>
+                    <a href="https://youssef20078y-max.github.io/Pizza/" class="btn">زيارة الموقع</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card">
+                <img src="teacher.jpg" alt="Teacher Site">
+                <div class="card-content">
+                    <h3 class="p-title">موقع تعليمي (Mr. Adam)</h3>
+                    <p class="p-desc">منصة احترافية للمدرسين لعرض الكورسات.</p>
+                    <a href="https://youssef20078y-max.github.io/Teacher/" class="btn">زيارة الموقع</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card">
+                <img src="luxe.jpg" alt="Store Site">
+                <div class="card-content">
+                    <h3 class="p-title">متجر أونلاين (Luxe Store)</h3>
+                    <p class="p-desc">تجربة تسوق عصرية لزيادة مبيعاتك.</p>
+                    <a href="https://youssef20078y-max.github.io/Luxe/" class="btn">زيارة الموقع</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact">
+            <h2 id="contact-head">محتاج موقع لبيزنس بتاعك؟</h2>
+            <p id="contact-p">كلمني دلوقتي واستفيد بخصم لفترة محدودة!</p>
+            <a href="https://wa.me/201015252752" class="whatsapp">
+                <i class="fab fa-whatsapp"></i> 01015252752
+            </a>
+        </div>
+    </div>
+
+    <script>
+        let currentLang = 'ar';
+        function toggleLang() {
+            const body = document.body;
+            if (currentLang === 'ar') {
+                document.documentElement.dir = 'ltr';
+                document.getElementById('name').innerText = "Youssef Ibrahim Khaled";
+                document.getElementById('title').innerText = "Web Developer & Digital Entrepreneur";
+                document.getElementById('bio').innerText = "Turning your ideas into reality with professional websites.";
+                document.getElementById('projects-head').innerText = "My Work Samples 🚀";
+                document.getElementById('contact-head').innerText = "Need a website for your business?";
+                document.getElementById('contact-p').innerText = "Contact me now for a limited time discount!";
+                document.querySelector('.lang-btn').innerText = "🌐";
+                currentLang = 'en';
+            } else {
+                document.documentElement.dir = 'rtl';
+                document.getElementById('name').innerText = "Youssef Ibrahim Khaled";
+                document.getElementById('title').innerText = "مطور مواقع وريادي أعمال رقمي";
+                document.getElementById('bio').innerText = "بحول فكرتك لواقع بمواقع احترافية وتصميمات تخطف العين.";
+                document.getElementById('projects-head').innerText = "نماذج من أعمالي 🚀";
+                document.getElementById('contact-head').innerText = "محتاج موقع لبيزنس بتاعك؟";
+                document.getElementById('contact-p').innerText = "كلمني دلوقتي واستفيد بخصم لفترة محدودة!";
+                document.querySelector('.lang-btn').innerText = "🌐";
+                currentLang = 'ar';
+            }
+        }
+    </script>
+</body>
+</html>
