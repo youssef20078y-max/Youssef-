@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youssef Ibrahim | Front-End Developer & UI Designer</title>
+<meta name="description" content="يوسف إبراهيم — بصمم وأبرمج مواقع للمطاعم والمدرسين والمتاجر. Responsive وسريعة وواضحة.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3efe6;--bg2:#e9e3d6;--ink:#1b1b1b;--muted:#6b665c;--line:#cfc8b8;--accent:#d9481c;--wa:#25d366}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:'Cairo','Segoe UI',Tahoma,sans-serif;line-height:1.8;font-size:1.02rem}
+a{color:inherit}
+.wrap{max-width:1040px;margin:auto;padding:0 22px}
+.latin{font-family:'Playfair Display',serif;direction:ltr;unicode-bidi:embed}
+
+/* buttons */
+.btn{display:inline-block;padding:10px 22px;font-weight:700;text-decoration:none;border:2px solid var(--ink);font-family:inherit;font-size:.95rem;cursor:pointer;transition:.2s;background:none;color:var(--ink)}
+.btn:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.wa{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#06361a;border:2px solid var(--wa);font-weight:900;text-decoration:none;padding:10px 24px;font-size:1rem;border-radius:999px;transition:.2s;font-family:inherit}
+.wa:hover{background:#1ebe5b;border-color:#1ebe5b;transform:translateY(-2px);box-shadow:0 6px 16px rgba(37,211,102,.35)}
+.wa.sm{padding:5px 16px;font-size:.88rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:14px}
+.logo{text-decoration:none;font-weight:700;font-size:1.1rem}
+.logo i{color:var(--accent);font-style:normal}
+.links{display:flex;gap:24px;list-style:none;margin-inline-start:auto}
+.links a{text-decoration:none;font-size:.93rem;font-weight:600;border-bottom:2px solid transparent;padding-bottom:2px}
+.links a:hover{border-color:var(--accent)}
+.burger{display:none;background:none;border:1.5px solid var(--ink);width:40px;height:34px;font-size:1rem;cursor:pointer;color:var(--ink)}
+
+/* hero */
+header{padding:60px 0 64px}
+header .wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;align-items:center}
+.tag{color:var(--accent);font-weight:700;font-size:.95rem;direction:ltr;text-align:right}
+h1{font-size:clamp(2.1rem,5.5vw,3.7rem);line-height:1.2;font-weight:900;margin:8px 0 14px}
+h1 em{font-style:normal;border-bottom:4px solid var(--accent)}
+.sub{color:#3b3831;max-width:500px;font-size:1.08rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px;align-items:center}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.facts b{display:block;color:var(--ink);font-size:1.05rem}
+.photo{position:relative;justify-self:center;width:min(270px,80%)}
+.photo::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:2px solid var(--ink)}
+.profile-img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;background:var(--bg2);display:block}
+
+section{padding:64px 0;border-top:1px solid var(--line)}
+.label{color:var(--accent);font-weight:700;font-size:.85rem;direction:ltr;text-align:right}
+h2{font-size:1.8rem;font-weight:900;margin:2px 0 26px;line-height:1.3}
+
+/* projects */
+.filters{display:flex;gap:6px 20px;flex-wrap:wrap;margin-bottom:26px}
+.filters button{background:none;border:none;font-family:inherit;font-size:.95rem;font-weight:600;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;padding:2px 0}
+.filters button.active{color:var(--ink);border-color:var(--accent)}
+.proj{padding:26px 0;border-top:1px solid var(--line)}
+.proj.hide{display:none}
+.shot{aspect-ratio:19/6;width:100%;background:var(--bg2);position:relative;overflow:hidden;border:1.5px solid var(--ink)}
+.shot::after{content:attr(data-file);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9a937f;font-size:.8rem;direction:ltr}
+.shot img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.proj:hover .shot img{transform:scale(1.02)}
+.pbody{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:14px;flex-wrap:wrap}
+.ptype{color:var(--accent);font-size:.8rem;font-weight:700;direction:ltr;text-align:right}
+.proj h3{font-size:1.5rem;line-height:1.3;direction:ltr;text-align:right}
+.proj p{color:#3b3831;font-size:.95rem}
+.acts{display:flex;gap:10px}
+.acts .btn{padding:6px 16px;font-size:.88rem}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc div{border-top:2px solid var(--ink);padding-top:10px;font-weight:700}
+.svc small{display:block;color:var(--muted);font-weight:400;font-size:.88rem}
+.steps{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.steps div{flex:1;min-width:180px;background:var(--bg2);padding:14px 16px;font-weight:700}
+.steps b{color:var(--accent);margin-inline-end:6px}
+
+/* about */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.two p{color:#37342d;margin-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1.5px solid var(--ink);padding:0 12px;font-size:.88rem;direction:ltr;font-weight:600}
+.chips span.s{background:var(--ink);color:var(--bg)}
+.chips-note{color:var(--muted);font-size:.8rem;margin-top:8px}
+.tl{margin-top:26px}
+.tl div{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line)}
+.tl b{color:var(--accent);font-size:1.15rem}
+
+/* contact */
+#contact{background:var(--ink);color:var(--bg);border-top:none;text-align:center;padding:72px 0}
+#contact h2{margin-bottom:6px}
+#contact p{color:#cfc9b8}
+.num{display:block;margin:18px 0 18px;font-size:clamp(1.8rem,6vw,3rem);font-weight:900;direction:ltr;letter-spacing:1px}
+
+/* modal */
+dialog{margin:auto;width:min(720px,94vw);max-height:92vh;background:var(--bg);color:var(--ink);border:2px solid var(--ink);padding:0;overflow:auto}
+dialog::backdrop{background:rgba(20,18,12,.7)}
+.m-close{position:sticky;top:10px;float:left;margin:10px;z-index:3;width:36px;height:36px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+.m-body{padding:24px 28px 30px}
+.m-body h2{font-size:1.7rem;margin:2px 0 14px;direction:ltr;text-align:right}
+.m-sec{margin-top:16px}
+.m-sec h4{color:var(--accent);font-size:.8rem;direction:ltr;text-align:right}
+.m-sec p,.m-sec li{font-size:.97rem}
+.m-sec ul{padding-inline-start:20px}
+.demo-tag{display:inline-block;font-size:.75rem;border:1px dashed var(--muted);color:var(--muted);padding:0 8px;margin-top:12px;direction:ltr}
+.note{border-inline-start:4px solid var(--accent);background:var(--bg2);padding:8px 14px;font-size:.88rem;margin-top:18px}
+
+/* floating (mobile) */
+.fab{display:none}
+@media(max-width:760px){
+  .burger{display:block}
+  .links{display:none;position:absolute;top:56px;inset-inline:0;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+  .links.open{display:flex}
+  .links a{display:block;padding:14px 22px;border-top:1px solid var(--line);border-bottom:none}
+  nav .wa{display:none}
+  header{padding:36px 0 46px}
+  header .wrap{grid-template-columns:1fr;gap:30px}
+  .photo{order:-1;width:170px}
+  .svc{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr;gap:26px}
+  section{padding:48px 0}
+  .fab{display:inline-flex;position:fixed;bottom:16px;left:16px;z-index:60;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+  body{padding-bottom:70px}
+  .m-body{padding:18px 18px 26px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo latin">Youssef<i>.</i></a>
+    <button class="burger" aria-label="القائمة" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    <ul class="links" id="links">
+      <li><a href="#projects">الشغل</a></li>
+      <li><a href="#services">الخدمات</a></li>
+      <li><a href="#about">عني</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+    <a class="wa sm" data-wa href="https://wa.me/201108235028" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> تواصل معي</a>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <div>
+      <div class="tag">Front-End Developer &amp; UI Designer</div>
+      <h1>أنا يوسف. بعمل مواقع <em>واضحة وسريعة</em> لبيزنسك.</h1>
+      <p class="sub">مطعم، مدرس، متجر أو دعوة؟ بصمم وأبرمج الموقع بحيث يشتغل كويس على الموبايل وعميلك يوصل لللي عايزه بسرعة.</p>
+      <div class="cta">
+        <a class="wa" data-wa href="https://wa.me/201108235028" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> تواصل معي</a>
+        <a href="#projects" class="btn">شوف الشغل</a>
+      </div>
+      <div class="facts">
+        <div><b>6</b>مشاريع شغالة</div>
+        <div><b>Mobile First</b>على كل الشاشات</div>
+        <div><b>~2 سنة</b>ممارسة وتعلّم</div>
+      </div>
+    </div>
+    <div class="photo"><img src="me.jpg" alt="Youssef Ibrahim" class="profile-img"></div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="label">Selected Work</div>
+    <h2>شغلي</h2>
+    <div class="filters" id="filters">
+      <button class="active" data-f="all">All Projects</button>
+      <button data-f="restaurant">Restaurant</button>
+      <button data-f="business">Business</button>
+      <button data-f="ui">UI Design</button>
+      <button data-f="landing">Landing Pages</button>
+      <button data-f="personal">Personal</button>
+    </div>
+    <div id="grid"></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="label">What I Do</div>
+    <h2>بعملك إيه؟</h2>
+    <div class="svc">
+      <div>موقع مطعم<small>مينيو + حجز</small></div>
+      <div>صفحة مدرس<small>تعريف + حجز + أسعار</small></div>
+      <div>متجر أونلاين<small>منتجات + سلة</small></div>
+      <div>دعوات ومواقع شخصية<small>CV، مناسبات</small></div>
+    </div>
+    <div class="steps">
+      <div><b>1</b>تبعتلي فكرتك</div>
+      <div><b>2</b>أصمم وأوريك الشكل</div>
+      <div><b>3</b>أسلّمك موقع شغال</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="label">About</div>
+    <h2>عني</h2>
+    <div class="two">
+      <div>
+        <p>Junior Front-End Developer وUI Designer. بتعلم وبطبّق من حوالي سنتين، وبكتب كل موقع بـ HTML وCSS وJavaScript من غير Templates جاهزة.</p>
+        <p>بسأل الأول مين هيستخدم الموقع، وبراجعه على أحجام شاشات مختلفة قبل ما أسلّمه.</p>
+        <div class="tl">
+          <div><b class="latin">2024</b><span>بداية تعلّم Web Development</span></div>
+          <div><b class="latin">2025</b><span>Front-End وResponsive Design، أول مواقعي الكاملة</span></div>
+          <div><b class="latin">2026</b><span>UI Design وJavaScript ومشاريع أقرب للواقع</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="chips">
+          <span class="s">HTML5</span><span class="s">CSS3</span><span class="s">Responsive Design</span><span class="s">Landing Pages</span><span class="s">Mobile-Friendly UI</span>
+          <span>JavaScript</span><span>UI Design</span><span>Form Design</span><span>Navigation Design</span><span>Git / GitHub</span><span>UX Basics</span>
+        </div>
+        <div class="chips-note">الأسود = أقوى مهاراتي · تعلّم ذاتي وتدريب مستقل</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>جاهز نبدأ موقعك؟</h2>
+    <p>ابعتلي فكرتك على واتساب.</p>
+    <a class="num" href="tel:+201108235028">01108235028</a>
+    <a class="wa" data-wa href="https://wa.me/201108235028" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> تواصل معي</a>
+  </div>
+</section>
+
+<a class="wa fab" data-wa href="https://wa.me/201108235028" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> تواصل معي</a>
+
+<dialog id="modal">
+  <button class="m-close" aria-label="إغلاق" onclick="document.getElementById('modal').close()">✕</button>
+  <div class="m-body" id="mBody"></div>
+</dialog>
+
+<script>
+/* زرار واتساب: يفتح الشات برسالة جاهزة */
+const WA_MSG="عايز اسأل على سعر الويب سايت ❤️🌚";
+document.querySelectorAll('[data-wa]').forEach(a=>a.href="https://wa.me/201108235028?text="+encodeURIComponent(WA_MSG));
+
+const P=[
+{id:"pizza",name:"Pizzeria Roma",type:"Restaurant Website · Online Menu",cats:["restaurant","business","landing"],
+ url:"https://youssef20078y-max.github.io/Pizza/",tech:["HTML","CSS","JavaScript","Responsive"],
+ short:"مينيو بتصنيفات + حجز طاولة + آراء + العنوان.",
+ demo:"صاحب مطعم كان بيبعت المينيو صور على الواتساب وعايز مكان واحد للأصناف والحجوزات.",
+ sec:[["Challenge","أصناف كتير والزبون على الموبايل لازم يوصل للي عايزه بسرعة."],
+  ["What I Did","قسمت المينيو لتصنيفات بفلتر، وخليت زرار \"احجز\" ثابت في الـ Navigation."],
+  ["Features",["فلتر المينيو (بيتزا، باستا، مشروبات، ديسيرت)","فورم حجز طاولة برسالة تأكيد","آراء العملاء","العنوان ومواعيد العمل وخريطة"]],
+  ["Result","موقع بسيط وسريع والحجز في خطوات قليلة."]],
+ note:"الصور والأسعار المستخدمة في الـ demo تم تغييرها لأغراض العرض وحماية خصوصية العميل."},
+{id:"teacher",name:"Mr. Adam — English Tutor",type:"Educational Website · Tutor Landing Page",cats:["business","landing"],
+ url:"https://youssef20078y-max.github.io/Teacher/",tech:["HTML","CSS","JavaScript","Responsive"],
+ short:"تعريف بالمدرس + حجز سيشن + باكدجات أسعار + آراء الطلاب.",
+ demo:"مدرس إنجليزي معلوماته متفرقة في رسايل، ومحتاج صفحة واحدة تخلي الطالب يحجز بنفسه.",
+ sec:[["Challenge","الطالب الجديد مش عارف المدرس بيقدم إيه وبكام وإزاي يحجز."],
+  ["What I Did","رتبت الصفحة بترتيب أسئلة الطالب وكررت زرار الحجز في أكتر من مكان."],
+  ["Features",["قسم تعريف بالمدرس","فورم حجز (النوع، المستوى، الهدف)","باكدجات أسعار","آراء الطلاب"]],
+  ["Result","صفحة واحدة بتجاوب قبل ما الطالب يسأل."]],
+ note:"محتوى المدرس (الاسم، الأرقام، الآراء) تجريبي لأغراض العرض."},
+{id:"luxe",name:"Luxe Store",type:"Online Store · E-commerce UI",cats:["business","ui"],
+ url:"https://youssef20078y-max.github.io/Luxe/",tech:["HTML","CSS","JavaScript","Responsive"],
+ short:"فلاتر وترتيب + صفحة منتج + مفضلة + سلة + Dark mode.",
+ demo:"براند ملابس صغير عايز شكل راقي وتجربة شراء مفهومة على الموبايل.",
+ sec:[["Challenge","متجر بمنتجات كتير لازم يفضل نضيف وفاخر وسهل التنقل."],
+  ["What I Did","اعتمدت على Visual Design هادي وصور المنتجات هي البطل، ومسار واضح: تصفح ← تفاصيل ← سلة."],
+  ["Features",["تصنيفات وترتيب بالسعر والتقييم","صفحة منتج (لون، مقاس، كمية، منتجات مشابهة)","مفضلة وسلة بملخص وكوبون","Dark / Light mode"]],
+  ["Result","واجهة متجر كاملة (Front-End فقط) بهوية واضحة."]]},
+{id:"cv",name:"Online CV",type:"Personal CV / Resume Website",cats:["personal","landing"],
+ url:"https://youssef20078y-max.github.io/CV/",tech:["HTML","CSS","Responsive","Print"],
+ short:"CV بشكل موقع: خبرات + مشاريع + مهارات + تواصل.",
+ demo:"Demo: مصممة منتجات عايزة رابط واحد منظم بدل ملف PDF.",
+ sec:[["Challenge","الـ CV التقليدي طويل وثابت، المطلوب أهم حاجة تظهر الأول."],
+  ["What I Did","رتبت المحتوى بـ Information Hierarchy: التخصص، أرقام سريعة، ثم الخبرات والمشاريع."],
+  ["Features",["أقسام مرقمة 01–06","Timeline للخبرات","مشاريع مختارة","المهارات واللغات","Print / Download PDF"]],
+  ["Result","CV بيتقرا في دقيقة على الموبايل والـ Desktop."]],
+ note:"الشخصية والبيانات في الـ CV تجريبية."},
+{id:"invit",name:"Wedding Invitation",type:"Digital Invitation · Event Website",cats:["personal","landing","ui"],
+ url:"https://youssef20078y-max.github.io/invit/",tech:["HTML","CSS","JavaScript","Mobile First"],
+ short:"عد تنازلي + تفاصيل الحفل + المكان + جدول + RSVP.",
+ demo:"Demo: عروسين عايزين دعوة تتفتح على الموبايل وتجمع الردود في مكان واحد.",
+ sec:[["Challenge","الكارت الورقي مفيهوش عد تنازلي ولا خريطة ولا طريقة للرد."],
+  ["What I Did","بدأت Mobile First وقسمت المعلومات لأقسام قصيرة بهوية مبنية على Typography."],
+  ["Features",["عداد تنازلي","المراسم والـ Dress Code","المكان + رابط خريطة","جدول الليلة","Gallery وفورم RSVP"]],
+  ["Result","دعوة رقمية واضحة بدل الكارت التقليدي."]],
+ note:"الأسماء والتواريخ والصور تجريبية."},
+{id:"programmer",name:"Programmer Youssef",type:"Interactive Birthday Story · Personal Project",cats:["personal","ui"],
+ url:"https://youssef20078y-max.github.io/Programmer-Youssef-/",tech:["HTML","CSS","JavaScript","Audio & Video"],
+ short:"قصة تفاعلية بخطوات: عدادات + Timeline + صور + فيديو + مظاريف.",
+ demo:"مشروع شخصي: هدية عيد ميلاد على شكل موقع.",
+ sec:[["Challenge","أقدّم محتوى شخصي كقصة من غير زحمة، على الموبايل."],
+  ["What I Did","كل شاشة فيها فكرة واحدة وزرار تالي واضح، مع تحكم في الصوت والفيديو."],
+  ["Features",["شاشة تحميل وبوابة دخول","عدادات حيّة","سلايدر صور","رسالة فيديو","مظاريف تتفتح بالضغط"]],
+  ["Result","أكتر مشروع فيه Interaction، وبيوضح قدرتي على بناء Flow كامل."]],
+ note:"المشروع هدية خاصة، فمحتواه الشخصي مش معروض هنا."}
+];
+
+document.getElementById('grid').innerHTML=P.map((p,i)=>`
+<article class="proj" data-cats="${p.cats.join(' ')}">
+  <!-- PROJECT PREVIEW 19:6 — حط الصورة جنب index.html باسم: ${p.id}.jpg -->
+  <div class="shot" data-file="${p.id}.jpg (19:6)"><img src="${p.id}.jpg" alt="معاينة مشروع ${p.name}" loading="lazy" onerror="this.remove()"></div>
+  <div class="pbody">
+    <div><div class="ptype">${p.type}</div><h3>${p.name}</h3><p>${p.short}</p></div>
+    <div class="acts">
+      <button class="btn solid" onclick="openP(${i})">Case Study</button>
+      <a class="btn" href="${p.url}" target="_blank" rel="noopener">View Project</a>
+    </div>
+  </div>
+</article>`).join('');
+
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('active',x===b));
+  const f=b.dataset.f;
+  document.querySelectorAll('.proj').forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.cats.split(' ').includes(f)));
+});
+
+const modal=document.getElementById('modal');
+function openP(i){
+  const p=P[i];
+  const secs=p.sec.map(s=>`<div class="m-sec"><h4>${s[0]}</h4>${Array.isArray(s[1])?`<ul>${s[1].map(x=>`<li>${x}</li>`).join('')}</ul>`:`<p>${s[1]}</p>`}</div>`).join('');
+  document.getElementById('mBody').innerHTML=`
+    <div class="ptype">${p.type}</div><h2>${p.name}</h2>
+    <!-- PROJECT PREVIEW (MAIN) 19:6 — ${p.id}.jpg -->
+    <div class="shot" data-file="${p.id}.jpg (19:6)"><img src="${p.id}.jpg" alt="${p.name}" onerror="this.remove()"></div>
+    <span class="demo-tag">Demo Client Scenario</span>
+    <p style="margin-top:4px">${p.demo}</p>
+    ${secs}
+    <div class="m-sec"><h4>Tools</h4><p style="direction:ltr;text-align:right">${p.tech.join(' · ')}</p></div>
+    ${p.note?`<div class="note">${p.note}</div>`:''}
+    <div style="margin-top:20px"><a class="btn solid" href="${p.url}" target="_blank" rel="noopener">Live Website ↗</a></div>`;
+  modal.showModal();
+}
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+</script>
+</body>
+</html>
